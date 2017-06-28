@@ -1,0 +1,282 @@
+{
+	"variables": [],
+	"info": {
+		"name": "tecnms2401",
+		"_postman_id": "c2180f0f-dd8d-f3c0-0900-d756d515f326",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://172.20.20.10:443/restconf/data/restconf-state",
+			"request": {
+				"url": "https://172.20.20.10:443/restconf/data/restconf-state",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces?depth=12",
+			"request": {
+				"url": {
+					"raw": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces?depth=12",
+					"protocol": "https",
+					"host": [
+						"172",
+						"20",
+						"20",
+						"10"
+					],
+					"port": "443",
+					"path": [
+						"restconf",
+						"data",
+						"ietf-interfaces:interfaces"
+					],
+					"query": [
+						{
+							"key": "depth",
+							"value": "12",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2",
+			"request": {
+				"url": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet3",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://172.20.20.10:443/restconf/data/openconfig-interfaces:interfaces/interface=GigabitEthernet2?depth=6",
+			"request": {
+				"url": {
+					"raw": "https://172.20.20.10:443/restconf/data/openconfig-interfaces:interfaces/interface=GigabitEthernet3?depth=6",
+					"protocol": "https",
+					"host": [
+						"172",
+						"20",
+						"20",
+						"10"
+					],
+					"port": "443",
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces",
+						"interface=GigabitEthernet3"
+					],
+					"query": [
+						{
+							"key": "depth",
+							"value": "6",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://{{host}}:{{port}}/restconf/data/restconf-state",
+			"request": {
+				"url": "https://{{host}}:{{port}}/restconf/data/restconf-state",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2",
+			"request": {
+				"url": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet3",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ietf-interfaces:interface\": {\n        \"name\": \"GigabitEthernet3\",\n        \"type\": \"iana-if-type:ethernetCsmacd\",\n        \"enabled\": false,\n        \"ietf-ip:ipv4\": {\n            \"address\": [\n                {\n                    \"ip\": \"172.16.200.10\",\n                    \"netmask\": \"255.255.255.0\"\n                }\n            ]\n        },\n        \"ietf-ip:ipv6\": {}\n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces/interface=Loopback99",
+			"request": {
+				"url": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces/interface=Loopback99",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces",
+			"request": {
+				"url": "https://172.20.20.10:443/restconf/data/ietf-interfaces:interfaces",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ietf-interfaces:interface\": {\n        \"name\": \"Loopback100\",\n        \"type\": \"iana-if-type:softwareLoopback\",\n        \"enabled\": true,\n        \"ietf-ip:ipv4\": {\n            \"address\": [\n                {\n                    \"ip\": \"100.100.100.100\",\n                    \"netmask\": \"255.255.255.255\"\n                }\n            ]\n        },\n        \"ietf-ip:ipv6\": {}\n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
