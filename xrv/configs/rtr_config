@@ -1,0 +1,16 @@
+!! XR configuration
+!
+hostname xrv1
+!
+netconf-yang agent
+ ssh
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 172.20.20.30 255.255.255.0
+ no shutdown
+ !
+ssh server v2
+ssh server vrf default
+ssh server netconf vrf default
+
+end

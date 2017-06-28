@@ -1,0 +1,5 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/ned/ios">
+    <hostname>kev1</hostname>
+  </native>
+</config>
