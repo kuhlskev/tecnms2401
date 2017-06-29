@@ -1,0 +1,860 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Boron-SR2",
+		"_postman_id": "7579911a-bc34-ce9f-efe6-47cdbf55add4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "node-add-netconf",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules",
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<module xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:config\">\n  <type xmlns:prefix=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">prefix:sal-netconf-connector</type>\n  <name>PE178</name>\n  <address xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">10.101.178.1</address>\n  <port xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">830</port>\n  <username xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">cisco</username>\n  <password xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">cisco</password>\n  <tcp-only xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">false</tcp-only>\n  <event-executor xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">\n    <type xmlns:prefix=\"urn:opendaylight:params:xml:ns:yang:controller:netty\">prefix:netty-event-executor</type>\n    <name>global-event-executor</name>\n  </event-executor>\n  <binding-registry xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">\n    <type xmlns:prefix=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding\">prefix:binding-broker-osgi-registry</type>\n    <name>binding-osgi-broker</name>\n  </binding-registry>\n  <dom-registry xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">\n    <type xmlns:prefix=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom\">prefix:dom-broker-osgi-registry</type>\n    <name>dom-broker</name>\n  </dom-registry>\n  <client-dispatcher xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">\n    <type xmlns:prefix=\"urn:opendaylight:params:xml:ns:yang:controller:config:netconf\">prefix:netconf-client-dispatcher</type>\n    <name>global-netconf-dispatcher</name>\n  </client-dispatcher>\n  <processing-executor xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">\n    <type xmlns:prefix=\"urn:opendaylight:params:xml:ns:yang:controller:threadpool\">prefix:threadpool</type>\n    <name>global-netconf-processing-executor</name>\n  </processing-executor>\n  <keepalive-executor xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf\">\n    <type xmlns:prefix=\"urn:opendaylight:params:xml:ns:yang:controller:threadpool\">prefix:scheduled-threadpool</type>\n    <name>global-netconf-ssh-scheduled-executor</name>\n  </keepalive-executor>\n</module>"
+				},
+				"description": "change node: name-ip-username-password"
+			},
+			"response": []
+		},
+		{
+			"name": "node-delete-netconf",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/PE124",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "modules",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "node-add-mdsal-netconf",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/PE178",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authentication",
+						"value": "",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<node xmlns=\"urn:TBD:params:xml:ns:yang:network-topology\">\n  <node-id>PE178</node-id>\n  <host xmlns=\"urn:opendaylight:netconf-node-topology\">10.101.178.1</host>\n  <port xmlns=\"urn:opendaylight:netconf-node-topology\">830</port>\n  <username xmlns=\"urn:opendaylight:netconf-node-topology\">cisco</username>\n  <password xmlns=\"urn:opendaylight:netconf-node-topology\">cisco</password>\n  <tcp-only xmlns=\"urn:opendaylight:netconf-node-topology\">false</tcp-only>\n  </node>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "node-delete-mdsal-netconf",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/P108",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "network-topology-oper",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "network-topology-config",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "mpls-te-oper",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-mpls-te-oper:mpls-te",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "mpls-te-cfg",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-mpls-te-cfg:mpls-te",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "interface-config",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-ifmgr-cfg:interface-configurations",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "interface-properties-oper",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-ifmgr-oper:interface-properties",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "infra-stats-oper",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-infra-statsd-oper:infra-statistics",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "interface-config-single",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/interface-configuration/act/Loopback0",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "interface-add-loopback",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-ifmgr-cfg:interface-configurations",
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<interface-configuration xmlns=\"http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg\">\n    <active>act</active>\n    <interface-name>Loopback55</interface-name>\n    <ipv4-network xmlns=\"http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg\">\n        <addresses>\n            <primary>\n                <address>10.55.55.1</address>\n                <netmask>255.255.255.255</netmask>\n            </primary>\n        </addresses>\n    </ipv4-network>\n    <interface-virtual></interface-virtual>\n    <ipv6-network xmlns=\"http://cisco.com/ns/yang/Cisco-IOS-XR-ipv6-ma-cfg\">\n        <addresses>\n            <regular-addresses>\n                <regular-address>\n                    <address>2001:db8:55::1</address>\n                    <prefix-length>128</prefix-length>\n                    <zone>0</zone>\n                </regular-address>\n            </regular-addresses>\n        </addresses>\n    </ipv6-network>\n    <vrf xmlns=\"http://cisco.com/ns/yang/Cisco-IOS-XR-infra-rsi-cfg\">CU-4</vrf>\n\n</interface-configuration>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "mpls-te-oper-tunnel-head",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-mpls-te-oper:mpls-te/p2p-p2mp-tunnel/tunnel-heads/tunnel-head/tunnel-te12400",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "infra-stats-interface-oper",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "infra-stats-interface-G0/0/0/0-oper",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/GigabitEthernet0%2F0%2F0%2F0/latest/generic-counters",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "infra-stats-sub-interface-G0/0/0/0.1225-oper",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/GigabitEthernet0%2F0%2F0%2F0%2E1224/latest/generic-counters",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "subinterface-properties-oper",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-ifmgr-oper:interface-properties/data-nodes/data-node/0%2FRP0%2FCPU0/system-view/interfaces/interface/GigabitEthernet0%2F0%2F0%2F0%2E1224",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "rib-ipv4-default",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-ip-rib-ipv4-oper:rib/vrfs/vrf/default/afs/af/IPv4/safs/saf/Unicast/ip-rib-route-table-names/ip-rib-route-table-name/default/routes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "bgp-rib-config",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-bgp-rib-impl-cfg:rib-impl/example-bgp-rib",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BGP peer",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/neighbors",
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authentication",
+						"value": "null",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<neighbor xmlns=\"urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions\">\n    <neighbor-address>10.100.103.1</neighbor-address>\n    <timers>\n        <config>\n            <hold-time>180</hold-time>\n            <connect-retry>10</connect-retry>\n        </config>\n    </timers>\n    <transport>\n        <config>\n            <remote-port>179</remote-port>\n            <passive-mode>false</passive-mode>\n        </config>\n    </transport>\n    <config>\n        <peer-type>INTERNAL</peer-type>\n    </config>\n    <afi-safis>\n        <afi-safi>\n            <afi-safi-name>IPV4-UNICAST</afi-safi-name>\n        </afi-safi>\n        <afi-safi>\n            <afi-safi-name>LINKSTATE</afi-safi-name>\n        </afi-safi>\n    </afi-safis>\n</neighbor>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BGP peer received",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/bgp-rib:bgp-rib/rib/bgp-example/peer/bgp:%2F%2F10.100.102.1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authentication",
+						"value": "null",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<neighbor xmlns=\"urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions\">\n    <neighbor-address>10.100.102.1</neighbor-address>\n    <timers>\n        <config>\n            <hold-time>90</hold-time>\n            <connect-retry>10</connect-retry>\n        </config>\n    </timers>\n    <transport>\n        <config>\n            <remote-port>179</remote-port>\n            <passive-mode>false</passive-mode>\n        </config>\n    </transport>\n    <config>\n        <peer-type>INTERNAL</peer-type>\n    </config>\n</neighbor>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BGP received ipv4",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/bgp-rib:bgp-rib/rib/bgp-example/loc-rib/tables/bgp-types:ipv4-address-family/bgp-types:unicast-subsequent-address-family/ipv4-routes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authentication",
+						"value": "null",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<neighbor xmlns=\"urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions\">\n    <neighbor-address>10.100.102.1</neighbor-address>\n    <timers>\n        <config>\n            <hold-time>90</hold-time>\n            <connect-retry>10</connect-retry>\n        </config>\n    </timers>\n    <transport>\n        <config>\n            <remote-port>179</remote-port>\n            <passive-mode>false</passive-mode>\n        </config>\n    </transport>\n    <config>\n        <peer-type>INTERNAL</peer-type>\n    </config>\n</neighbor>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BGP link-state type",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/bgp-linkstate-app-config:bgp-linkstate-app-config",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authentication",
+						"value": "null",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<bgp-linkstate-app-config xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:linkstate-app-config\">\n    <iana-linkstate-attribute-type>false</iana-linkstate-attribute-type>\n</bgp-linkstate-app-config>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "bgp-rib-config",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-bgp-rib-impl-cfg:rib-impl/example-bgp-rib",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<module xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:config\">\n    <type xmlns:x=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">x:rib-impl</type>\n    <name>example-bgp-rib</name>\n    <local-as xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">65001</local-as>\n    <codec-tree-factory xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type xmlns:x=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding:v1:codec\">x:binding-v1-codec-tree-factory</type>\n        <name>runtime-mapping-singleton</name>\n    </codec-tree-factory>\n    <extensions xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type xmlns:x=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:spi\">x:extensions</type>\n        <name>global-rib-extensions</name>\n    </extensions>\n    <rib-id xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">example-bgp-rib</rib-id>\n    <dom-data-provider xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type xmlns:x=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom\">x:dom-async-data-broker</type>\n        <name>pingpong-broker</name>\n    </dom-data-provider>\n    <bgp-rib-id xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">192.168.30.101</bgp-rib-id>\n    <openconfig-provider xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type xmlns:x=\"urn:opendaylight:params:xml:ns:yang:controller:bgp-openconfig-spi\">x:bgp-openconfig-provider</type>\n        <name>openconfig-bgp</name>\n    </openconfig-provider>\n    <bgp-dispatcher xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-dispatcher</type>\n        <name>global-bgp-dispatcher</name>\n    </bgp-dispatcher>\n    <data-provider xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type xmlns:x=\"urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding\">x:binding-async-data-broker</type>\n        <name>pingpong-binding-data-broker</name>\n    </data-provider>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv4-unicast</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv6-unicast</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>linkstate</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv4-flowspec</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv6-flowspec</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv4-flowspec-l3vpn</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv6-flowspec-l3vpn</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv4-labeled-unicast</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv6-labeled-unicast</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv4-l3vpn</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>ipv6-l3vpn</name>\n    </local-table>\n    <local-table xmlns=\"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl\">\n        <type>bgp-table-type</type>\n        <name>evpn</name>\n    </local-table>\n</module>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BGP linkstate enable",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols",
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authentication",
+						"value": "null",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<protocol xmlns=\"http://openconfig.net/yang/network-instance\">\n    <name>bgp-example</name>\n    <identifier xmlns:x=\"http://openconfig.net/yang/policy-types\">x:BGP</identifier>\n    <bgp xmlns=\"urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions\">\n        <global>\n            <config>\n                <router-id>192.168.30.101</router-id>\n                <as>65001</as>\n            </config>\n            <afi-safis>\n                <afi-safi>\n                    <afi-safi-name>LINKSTATE</afi-safi-name>\n                </afi-safi>\n            </afi-safis>\n        </global>\n    </bgp>\n</protocol>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BGP received linkstate",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/bgp-rib:bgp-rib/rib/bgp-example/loc-rib/tables/bgp-linkstate:linkstate-address-family/bgp-linkstate:linkstate-subsequent-address-family/linkstate-routes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authentication",
+						"value": "null",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<neighbor xmlns=\"urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions\">\n    <neighbor-address>10.100.102.1</neighbor-address>\n    <timers>\n        <config>\n            <hold-time>90</hold-time>\n            <connect-retry>10</connect-retry>\n        </config>\n    </timers>\n    <transport>\n        <config>\n            <remote-port>179</remote-port>\n            <passive-mode>false</passive-mode>\n        </config>\n    </transport>\n    <config>\n        <peer-type>INTERNAL</peer-type>\n    </config>\n</neighbor>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "isis-oper-neighbor-summary",
+			"request": {
+				"url": "http://10.82.66.101:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/PE124/yang-ext:mount/Cisco-IOS-XR-clns-isis-oper:isis/instances/instance/ISIS/neighbor-summaries",
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

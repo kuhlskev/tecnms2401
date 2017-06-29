@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpc message-id="${TIMESTAMP}" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <get-config>
+        <source>
+            <running/>
+        </source>
+    </get-config>
+</rpc>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpc message-id="${TIMESTAMP}" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <edit-config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+        <target>
+            <candidate/>
+        </target>
+        <error-option>rollback-on-error</error-option>
+        <config>
+          <interface-configurations xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg">
+             <interface-configuration nc:operation="delete">
+                 <active>act</active>  
+                 <interface-name>Loopback11</interface-name>
+             </interface-configuration>
+          </interface-configurations>
+
+          <isis xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-clns-isis-cfg">
+            <instances>
+              <instance>
+                <instance-name>DEFAULT</instance-name>
+                <interfaces>
+                  <interface nc:operation="delete">
+                    <interface-name>Loopback11</interface-name>
+                  </interface>
+                </interfaces>
+              </instance>
+            </instances>
+          </isis>
+        </config>
+    </edit-config>
+</rpc>

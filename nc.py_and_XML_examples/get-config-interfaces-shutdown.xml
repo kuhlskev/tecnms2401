@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpc message-id="${TIMESTAMP}" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <get-config>
+        <source>
+            <running/>
+        </source>
+        <filter>
+            <interface-configurations xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg">
+                <interface-configuration>
+                    <shutdown/>
+                </interface-configuration>
+            </interface-configurations>
+        </filter>
+    </get-config>
+</rpc>

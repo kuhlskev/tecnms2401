@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpc message-id="${TIMESTAMP}" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <get>
+        <filter type="subtree">
+            <netconf-state xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-monitoring">
+                <schemas/>
+            </netconf-state>
+        </filter>          
+    </get>
+</rpc>

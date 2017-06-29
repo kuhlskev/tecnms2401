@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<rpc-reply message-id="1470153171" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+ <data>
+  <router-static xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ip-static-cfg">
+   <default-vrf>
+    <address-family>
+     <vrfipv4>
+      <vrf-unicast>
+       <vrf-prefixes>
+        <vrf-prefix>
+         <prefix>10.16.0.0</prefix>
+         <prefix-length>16</prefix-length>
+         <vrf-route>
+          <segment-route-next-hop-table>
+           <vrf-next-hop-next-hop-address>
+            <next-hop-address>198.18.1.1</next-hop-address>
+           </vrf-next-hop-next-hop-address>
+          </segment-route-next-hop-table>
+         </vrf-route>
+        </vrf-prefix>
+        <vrf-prefix>
+         <prefix>10.64.0.0</prefix>
+         <prefix-length>16</prefix-length>
+         <vrf-route>
+          <segment-route-next-hop-table>
+           <vrf-next-hop-next-hop-address>
+            <next-hop-address>198.18.1.1</next-hop-address>
+           </vrf-next-hop-next-hop-address>
+          </segment-route-next-hop-table>
+         </vrf-route>
+        </vrf-prefix>
+        <vrf-prefix>
+         <prefix>198.18.0.0</prefix>
+         <prefix-length>16</prefix-length>
+         <vrf-route>
+          <segment-route-next-hop-table>
+           <vrf-next-hop-next-hop-address>
+            <next-hop-address>198.18.1.1</next-hop-address>
+           </vrf-next-hop-next-hop-address>
+          </segment-route-next-hop-table>
+         </vrf-route>
+        </vrf-prefix>
+       </vrf-prefixes>
+      </vrf-unicast>
+     </vrfipv4>
+    </address-family>
+   </default-vrf>
+  </router-static>
+
+ </data>
+</rpc-reply>
+

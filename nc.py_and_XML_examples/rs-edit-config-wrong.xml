@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<rpc-reply message-id="1470155102" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+ <rpc-error>
+  <error-type>protocol</error-type>
+  <error-tag>bad-element</error-tag>
+  <error-severity>error</error-severity>
+  <error-path xmlns:ns1="http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg" xmlns:ns2="http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg">ns2:interface-configurations/ns2:interface-configuration[active = 'act' and interface-name = 'Loopback100']/ns1:ipv4-network/ns1:addresses/ns1:primary/ns1:address</error-path>
+  <error-info>
+   <bad-element>address</bad-element>
+  </error-info>
+ </rpc-error>
+</rpc-reply>
+

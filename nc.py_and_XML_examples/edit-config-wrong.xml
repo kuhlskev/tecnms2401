@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="${TIMESTAMP}">
+  <edit-config>
+    <target>
+      <candidate/>
+    </target>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <interface-configurations xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg">
+        <interface-configuration>
+          <active>act</active>
+          <interface-name>Loopback100</interface-name>
+          <interface-virtual/>
+          <vrf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-rsi-cfg">RED</vrf>
+          <ipv4-network xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg">
+            <addresses>
+              <primary>
+                <address>192.168.26666665.1</address>
+                <netmask>255.255.255.255</netmask>
+              </primary>
+            </addresses>
+          </ipv4-network>
+        </interface-configuration>
+      </interface-configurations>
+    </config>
+  </edit-config>
+</rpc>

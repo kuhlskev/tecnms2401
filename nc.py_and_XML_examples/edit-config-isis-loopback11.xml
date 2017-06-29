@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="${TIMESTAMP}">
+  <edit-config>
+    <target>
+      <candidate/>
+    </target>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <isis xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-clns-isis-cfg">
+        <instances>
+          <instance>
+            <instance-name>DEFAULT</instance-name>
+            <interfaces>
+              <interface>
+                <interface-name>Loopback11</interface-name>
+                <running/>
+                <state>passive</state>
+                <interface-afs>
+                  <interface-af>
+                    <af-name>ipv4</af-name>
+                    <saf-name>unicast</saf-name>
+                    <interface-af-data>
+                      <running/>
+                    </interface-af-data>
+                  </interface-af>
+                </interface-afs>
+              </interface>
+            </interfaces>
+          </instance>
+        </instances>
+      </isis>
+      <interface-configurations xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg">
+        <interface-configuration>
+          <active>act</active>
+          <interface-name>Loopback11</interface-name>
+          <interface-virtual/>
+          <description>Configured by NETCONF client</description>
+          <ipv4-network xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg">
+            <addresses>
+              <primary>
+                <address>172.16.255.11</address>
+                <netmask>255.255.255.255</netmask>
+              </primary>
+            </addresses>
+          </ipv4-network>
+        </interface-configuration>
+      </interface-configurations>
+    </config>
+  </edit-config>
+</rpc>
