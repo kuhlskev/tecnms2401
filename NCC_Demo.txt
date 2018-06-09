@@ -1,0 +1,193 @@
+================================================================================
+
+YANG EXPLORER DEMO 1
+--------------------
+
+* Show basic tool, ability to traverse tree (leave device interaction
+  until later on, after ncc.py.
+
+================================================================================
+
+** NCCLIENT JUPYTER NOTEBOOK **
+
+Need to prepare virtualenv 'ncc'
+
+================================================================================
+
+NCC DEMOS
+
+================================================================================
+
+** SETUP **
+
+export NCC_USERNAME=vagrant
+export NCC_PASSWORD=vagrant
+export NCC_SNIPPETS=`pwd`/snippets-cl
+
+================================================================================
+
+** MERGE/REMOVE LOOPBACK **
+
+ncc --host=127.0.0.1 --port=2830 \
+    --do-edits cl-loop-merge \
+    --params '{"NUMBER": "100", "IP_ADDR": "172.16.1.1", "IP_MASK": "255.255.255.255"}'
+
+ncc --host=127.0.0.1 --port=2830 \
+    --do-edits cl-loop-remove \
+    --params '{"NUMBER": "100"}'
+
+
+** CREATE BASIC BGP CONFIG **
+
+ncc --host=127.0.0.1 --port=2830 --do-edits cl-bgp-basic
+
+
+** DELETE router bgp 100 **
+
+ncc --host=127.0.0.1 --port=2830 --do-edits cl-bgp-del
+
+
+** ADD/REMOVE NEIGHBOR **
+
+ncc --host=127.0.0.1 --port=2830 \
+    --do-edits cl-bgp-nbr-merge \
+    --params '{"NBR_ID": "2.2.2.4", "REMOTE_AS": "300"}'
+
+ncc --host=127.0.0.1 --port=2830 \
+    --do-edits cl-bgp-nbr-create \
+    --params '{"NBR_ID": "2.2.2.4", "REMOTE_AS": "300"}'
+
+ncc --host=127.0.0.1 --port=2830 \
+    --do-edits cl-bgp-nbr-remove \
+    --params '{"NBR_ID": "2.2.2.4"}'
+
+ncc --host=127.0.0.1 --port=2830 \
+    --do-edits cl-bgp-nbr-delete \
+    --params '{"NBR_ID": "2.2.2.4"}'
+
+
+** OPERATIONAL DATA GETS **
+
+
+## Interfaces
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    --named-filter cl-intf-oper
+
+## Interfaces, "statistics" only
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    --named-filter cl-intf-oper-stats
+
+## Interfaces, in-octets and out-octets from "statistics" only
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    --named-filter cl-intf-oper-in-out-octets
+
+## Interface Gi1, all oper data
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    --named-filter cl-intf-oper-named \
+    --params '{"INTF_NAME": "GigabitEthernet1"}'
+
+## Interface Gi1, "statistics" only
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    --named-filter cl-intf-oper-named-stats \
+    --params '{"INTF_NAME": "GigabitEthernet1"}'
+
+## Interface Gi1, "statistics" only
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    --named-filter cl-intf-oper-named-in-out-octets \
+    --params '{"INTF_NAME": "GigabitEthernet1"}'
+
+*** FIB OPERATIONAL DATA ***
+
+## FIB operational data
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    -x '/fib-oper-data'
+
+
+*** CPU USAGE ***
+
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    -x '/cpu-usage/cpu-utilization/five-seconds'
+
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    -x '/cpu-usage/cpu-utilization/cpu-usage-processes'
+    
+## process "BGP Router"
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    -x '/cpu-usage/cpu-utilization/cpu-usage-processes/cpu-usage-process[name="BGP Router"]'
+
+## process "BGP Router"
+python ncc-simple-poller.py --host=127.0.0.1 --port=2830 -u vagrant -p vagrant \
+    --cadence 5 \
+    -x '/cpu-usage/cpu-utilization/cpu-usage-processes/cpu-usage-process[name="BGP Router"]'
+    --display-tags invocation-count total-run-time avg-run-time
+
+## process "BGP Router"
+python ncc-simple-poller.py --host=127.0.0.1 --port=2830 -u vagrant -p vagrant \
+    --cadence 5 \
+    -x '/cpu-usage/cpu-utilization/cpu-usage-processes/cpu-usage-process[name="BGP Router"]'
+    --display-tags invocation-count total-run-time avg-run-time
+
+
+*** PROCESS MEMORY ***
+
+ncc --host=127.0.0.1 --port=2830 \
+    --get-oper \
+    -x '/memory-usage-processes/memory-usage-process[name="BGP Router"]'
+
+python ncc-simple-poller.py --host=127.0.0.1 --port=2830 -u vagrant -p vagrant \
+    --cadence 5 \
+    -x '/cpu-usage/cpu-utilization/cpu-usage-processes/cpu-usage-process[name="BGP Router"]'
+    --display-tags invocation-count total-run-time avg-run-time
+
+
+** TELEMETRY **
+
+python ncc-establish-subscription.py --host=127.0.0.1 --port=2830 -u vagrant -p vagrant \
+    --period=1000 \
+    --xpath '/interfaces/interface[name="GigabitEthernet1"]/statistics/in-octets'
+
+
+python ncc-establish-subscription.py --host=127.0.0.1 --port=2830 -u vagrant -p vagrant \
+    --period=1000 \
+    --xpath '/memory-statistics/memory-statistic[name="Processor"]'
+
+python ncc-establish-subscription.py --host=127.0.0.1 --port=2830 -u vagrant -p vagrant \
+    --period=1000 \
+    --xpath '/memory-statistics'
+
+python ncc-establish-subscription.py --host=127.0.0.1 --port=2830 -u vagrant -p vagrant \
+    --period=1000 \
+    --xpath '/cpu-usage/cpu-utilization/cpu-usage-processes/cpu-usage-process[name="BGP Router"]'
+
+
+YANG EXPLORER DEMO 2
+--------------------
+
+* Basic get on native model, Loopback interfaces maybe?
+
+* Ability to edit-config, again Loopback interface, apply new IP
+  address.
+
+* Get the config we just created back.
+
+* Try some oper data subtree filters:
+
+ * <fib-oper-data xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-fib-oper"/>
+
+ * <interfaces xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-interfaces-oper"/>
+
+ * <memory-statistics xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-memory-oper"/>
+
+ * <cisco-platform-software xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-platform-software-oper">
+
+
