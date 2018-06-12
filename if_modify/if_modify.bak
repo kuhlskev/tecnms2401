@@ -1,0 +1,83 @@
+#! /usr/bin/env python
+# Sample if_then routine. This uses ncclient to send NETCONF XML RPC's
+# Reads ISIS adjacency status and an IPv4 prefix from XR router
+# If conditions are met, a loopback is added/deleted or no change
+
+import sys, os, warnings
+warnings.simplefilter("ignore", DeprecationWarning)
+from ncclient import manager
+import time
+from datetime import datetime
+
+# target NETCONF server
+server = '10.101.112.1'
+# time between checks in seconds
+t = 300.000
+# filters and responses
+filter1 = 'filter-oper-router-isis-neighbors.xml'
+filter2 = 'filter-oper-rib-ipv4-default.xml'
+response1 = 'isis.xml'
+response2 = 'rib.xml'
+
+# minimum IGP adjacencies for no need for loopback
+min_adj = 2
+
+logfile = 'if_modify.log'
+tracefile = 'if_modify.trace.log'
+
+user='cisco'
+password='cisco'
+
+def check_oper(subtree_filter, response, trace_string, count_string):
+	count = 0
+	c = m.get(filter = ('subtree', open(subtree_filter, 'r').read()))
+	with open(response, 'r+') as f:
+		f.write(str(c))
+		for line in f:
+			if trace_string and (trace_string in line):
+				trace.write(line)
+			if count_string in line:
+				count +=1
+	return count
+
+
+def get_ISIS():
+	c = m.get(filter=('subtree', open('filter-oper-router-isis-neighbors.xml','r').read()))
+        with open('isis.xml', 'r+') as f:
+	    	f.write(str(c))
+	       	adj = 0
+        	for line in f:
+                	if '<neighbor-state>isis-adj-up-state</neighbor-state>' in line:
+                        	adj+=1
+        	print adj
+
+def get_rib():
+        c = m.get(filter=('subtree', open('filter-oper-rib-ipv4-default.xml','r').read()))
+        with open('rib.xml', 'r+') as f:
+            	f.write(str(c))
+		route = False
+		for line in f:
+			if '<address>172.16.255.55</address>' in line:
+				route = True
+				break
+
+if __name__ == '__main__':
+	trace = open(tracefile,'a')
+	log = open(logfile,'a')
+
+	op_time = str(datetime.now())
+	trace.write(op_time + ' start' + '\n')
+	log.write(op_time + ' start' + '\n')
+
+    	with manager.connect(host=server, port=830, username=user, password=password) as m:
+		while True:
+			# Read ISIS adjacencies and IPv4 RIB
+    			#get_ISIS()
+    			#get_rib()
+			adj = check_oper(filter1, response1, '<system-id>', '<neighbor-state>isis-adj-up-state</neighbor-state>')
+			print adj
+			route = check_oper(filter2, response2, '', '<address>172.16.255.55</address>')
+			print route
+		
+			# Wait for next cycle
+			time.sleep(t)

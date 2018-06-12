@@ -1,0 +1,12 @@
+<isis xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-clns-isis-oper">
+ <instances>
+    <instance>
+      <instance-name>ISIS</instance-name>
+      <neighbors>
+        <neighbor>
+          <neighbor-state>isis-adj-up-state</neighbor-state>
+        </neighbor>
+      </neighbors>
+    </instance>
+  </instances>
+</isis>

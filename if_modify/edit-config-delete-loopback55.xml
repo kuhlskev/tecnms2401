@@ -1,0 +1,8 @@
+<config>
+  <interface-configurations xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg">
+    <interface-configuration nc:operation="delete">
+      <active>act</active>  
+      <interface-name>Loopback55</interface-name>
+    </interface-configuration>
+  </interface-configurations>
+</config>

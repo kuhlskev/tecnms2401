@@ -1,0 +1,20 @@
+<rib xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ip-rib-ipv4-oper">
+  <vrfs>
+    <vrf>
+      <vrf-name>default</vrf-name>
+      <afs>
+        <af>
+          <af-name>IPv4</af-name>
+          <safs>
+            <saf>
+              <saf-name>Unicast</saf-name>
+              <ip-rib-route-table-names>
+                <ip-rib-route-table-name>default</ip-rib-route-table-name>
+              </ip-rib-route-table-names>
+            </saf>
+          </safs>
+        </af>
+      </afs>
+    </vrf>
+  </vrfs>
+</rib>
