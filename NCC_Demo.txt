@@ -26,6 +26,8 @@ export NCC_SNIPPETS=`pwd`/snippets-cl
 
 ================================================================================
 
+ncc.py --host=127.0.0.1 --port=2830 --capabilities
+
 ** MERGE/REMOVE LOOPBACK **
 
 ncc --host=127.0.0.1 --port=2830 \

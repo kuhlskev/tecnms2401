@@ -33,7 +33,8 @@ def main():
   m = ncclient.manager.connect(**nckwargs)  
   try:
     print ('Here we are printing the RIB as XML\n')
-    c = m.get(filter=('subtree', xml_filter))
+    #c = m.get(filter=('subtree', xml_filter))
+    c = m.getconfig()
     xmlDom = xml.dom.minidom.parseString(str(c))
     print (xmlDom.toprettyxml( indent = " " ))
   except TimeoutExpiredError as e:

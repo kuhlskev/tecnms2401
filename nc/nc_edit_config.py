@@ -4,13 +4,14 @@ import xml.dom.minidom
 from ncclient.operations import TimeoutExpiredError
 import pprint
 
-xml_file = 'bgp_conf.xml'
+#xml_file = 'bgp_conf.xml'
+xml_file = 'eigrp_conf.xml'
 #xml_file = 'hostname.xml'
 
 def main():
   parser = ArgumentParser(description='Select options.')
   # Input parameters
-  parser.add_argument('--host', type=str, default='172.20.20.20',
+  parser.add_argument('--host', type=str, default='172.20.20.10',
   help="The device IP or DN")
   parser.add_argument('-u', '--username', type=str, default='vagrant')
   parser.add_argument('-p', '--password', type=str, default='vagrant')
